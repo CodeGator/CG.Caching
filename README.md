@@ -1,9 +1,9 @@
 # CG.Caching: 
 ---
-[![Build Status](https://dev.azure.com/codegator/CG.Caching/_apis/build/status/CodeGator.CG.Caching?branchName=master)](https://dev.azure.com/codegator/CG.Caching/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/codegator/CG.Caching/_apis/build/status/CodeGator.CG.Caching?branchName=main)](https://dev.azure.com/codegator/CG.Caching/_build/latest?definitionId=63&branchName=main)
 [![Github docs](https://img.shields.io/static/v1?label=Documentation&message=online&color=blue)](https://codegator.github.io/CG.Caching/)
 [![NuGet downloads](https://img.shields.io/nuget/dt/CG.Caching.svg?style=flat)](https://nuget.org/packages/CG.Caching)
-![SqlServer DevOps coverage](https://img.shields.io/azure-devops/coverage/codegator/CG.Caching/1)
+![SqlServer DevOps coverage](https://img.shields.io/azure-devops/coverage/codegator/CG.Caching/63)
 [![Github discussion](https://img.shields.io/badge/Discussion-online-blue)](https://github.com/CodeGator/CG.Caching/discussions)
 
 #### What does it do?
