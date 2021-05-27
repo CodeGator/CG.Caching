@@ -18,6 +18,7 @@ Platforms supported:
     <RepositoryUrl>https://github.com/CodeGator/CG.Caching</RepositoryUrl>
     <PackageIcon>packageDefaultIcon-50x50.png</PackageIcon>
     <Product>CG.Caching</Product>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
