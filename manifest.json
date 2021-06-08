@@ -13,102 +13,6 @@
       "is_incremental": false
     },
     {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.Cache.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.Cache.html",
-          "hash": "vsl+7/BI/AKNOz8wwMr7ZzIqB+SiE0YCSVKgTQPKcJU="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.ICache.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.ICache.html",
-          "hash": "KAVOzRvLmI50qKhvv82WiC93I+ScH3Ud9rkbMX51FTg="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.ServiceCollectionExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.ServiceCollectionExtensions.html",
-          "hash": "j2kunYoJkp+g9HfDkae2kIZ1m83AGtYD7VUfNh6Odlg="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.html",
-          "hash": "wTx+DVj1SyIWLSLkoIj/zX0wiy4bL3ij3KS5atF4oIg="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.Strategies.Distributed.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.Strategies.Distributed.html",
-          "hash": "oZzKD4bsIRgF3GEJmkqZOlBMoHWki9WJ+OSKLki8nkU="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.Strategies.InMemory.ServiceCollectionExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.Strategies.InMemory.ServiceCollectionExtensions.html",
-          "hash": "VNbkFmnfGU8BQUzKPIcr8FWWu+VxznE2CYQllnxHVFk="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.Strategies.InMemory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.Strategies.InMemory.html",
-          "hash": "f9JvW/v4rYQGgB3LZPjLHMNT6K/8BfgyYBFuuBA5/ag="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.html",
-          "hash": "JtcPw0x5NzWBaR/PLDAu7FWoeXjhBCxfXZHMDGDeKoA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
@@ -121,12 +25,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "f4JIT4BVMV7InnNHmSD1K132vbRWa40Pl+u8iAIOoUg="
+          "hash": "n+HfZL3mOX8Yn2xm8apoiB7B0XTRnlTmkQuAY2hpJOI="
         }
       },
       "is_incremental": false,
@@ -213,12 +120,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "oad/XD8GevGJB0RW5CcU/s0ej+IjEhDLghJnmwxqGxY="
+          "hash": "HkksHbPYKoEowsrrlLO+sOA9SAv4VWGuvSAg4nVhkCY="
         }
       },
       "is_incremental": false,
@@ -240,12 +150,6 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 8,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
