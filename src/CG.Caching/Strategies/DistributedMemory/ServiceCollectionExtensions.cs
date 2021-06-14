@@ -31,7 +31,7 @@ namespace CG.Caching.Strategies.Distributed
         public static IServiceCollection AddDistributedMemoryStrategies(
             this IServiceCollection serviceCollection,
             IConfiguration configuration,
-            ServiceLifetime serviceLifetime = ServiceLifetime.Scoped
+            ServiceLifetime serviceLifetime
             )
         {
             // Validate the parameters before attempting to use them.
