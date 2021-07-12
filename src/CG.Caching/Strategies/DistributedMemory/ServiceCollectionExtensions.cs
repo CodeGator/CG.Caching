@@ -46,9 +46,6 @@ namespace CG.Caching.Strategies.Distributed
             // Register the ASP.NET cache service.
             serviceCollection.AddDistributedMemoryCache();
 
-            // Register the wrapper service.
-            serviceCollection.Add<ICache, Cache>(serviceLifetime);
-
             // Return the service collection.
             return serviceCollection;
         }

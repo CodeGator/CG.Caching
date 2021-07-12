@@ -11,7 +11,7 @@ namespace CG.Caching
 {
     /// <summary>
     /// This class contains extension methods related to the <see cref="IServiceCollection"/>
-    /// type, for registering caching extensions.
+    /// type.
     /// </summary>
     public static partial class ServiceCollectionExtensions
     {
@@ -22,8 +22,8 @@ namespace CG.Caching
         #region Public methods
 
         /// <summary>
-        /// This method adds services and strategies for building a cache service
-        /// to the specified service collection.
+        /// This method adds services and strategies for a distributed cache 
+        /// service.
         /// </summary>
         /// <param name="serviceCollection">The service collection to use for 
         /// the operation.</param>
@@ -33,15 +33,22 @@ namespace CG.Caching
         /// an strategies for the service.</returns>
         /// <exception cref="ArgumentException">This exception is thrown whenever
         /// a required argument is missing or invalid.</exception>
-        public static IServiceCollection AddCaching(
+        public static IServiceCollection AddDistributedCaching(
             this IServiceCollection serviceCollection,
             IConfiguration configuration,
-            ServiceLifetime serviceLifetime = ServiceLifetime.Scoped
+            ServiceLifetime serviceLifetime = ServiceLifetime.Singleton
             )
         {
             // Validate the parameters before attempting to use them.
             Guard.Instance().ThrowIfNull(serviceCollection, nameof(serviceCollection))
                 .ThrowIfNull(configuration, nameof(configuration));
+
+            // Caching is a little different in that we don't actually define
+            //   an IDistributedCache type, since it's already part of .NET, and
+            //   we also don't define any concrete cache types, since they are also 
+            //   part of .NET. What we do, is integrate what .NET offers with our
+            //   own strategy loader mechanism - this way, we can change the caching
+            //   strategy using the configuration, as it should be.
 
             // Register the strategy(s).
             serviceCollection.AddStrategies(

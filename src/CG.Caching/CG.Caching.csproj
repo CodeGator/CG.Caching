@@ -30,14 +30,13 @@ Platforms supported:
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="DistributedCacheExtensions.cs" />
     <Compile Remove="MemoryCacheExtensions.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CG.Business" Version="2021.2.29" />
-    <PackageReference Include="CG.DependencyInjection" Version="2021.2.9" />
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.216">
+    <PackageReference Include="CG.Business" Version="2021.3.1" />
+    <PackageReference Include="CG.DependencyInjection" Version="2021.3.1" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.220">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
