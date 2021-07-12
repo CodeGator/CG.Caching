@@ -1,3 +1,97 @@
 ### YamlMime:XRefMap
 sorted: true
-references: []
+references:
+- uid: CG.Caching
+  name: CG.Caching
+  href: api/CG.Caching.html
+  commentId: N:CG.Caching
+  fullName: CG.Caching
+  nameWithType: CG.Caching
+- uid: CG.Caching.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  href: api/CG.Caching.ServiceCollectionExtensions.html
+  commentId: T:CG.Caching.ServiceCollectionExtensions
+  fullName: CG.Caching.ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+- uid: CG.Caching.ServiceCollectionExtensions.AddDistributedCaching(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.ServiceLifetime)
+  name: AddDistributedCaching(IServiceCollection, IConfiguration, ServiceLifetime)
+  href: api/CG.Caching.ServiceCollectionExtensions.html#CG_Caching_ServiceCollectionExtensions_AddDistributedCaching_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_DependencyInjection_ServiceLifetime_
+  commentId: M:CG.Caching.ServiceCollectionExtensions.AddDistributedCaching(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.ServiceLifetime)
+  fullName: CG.Caching.ServiceCollectionExtensions.AddDistributedCaching(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.DependencyInjection.ServiceLifetime)
+  nameWithType: ServiceCollectionExtensions.AddDistributedCaching(IServiceCollection, IConfiguration, ServiceLifetime)
+- uid: CG.Caching.ServiceCollectionExtensions.AddDistributedCaching*
+  name: AddDistributedCaching
+  href: api/CG.Caching.ServiceCollectionExtensions.html#CG_Caching_ServiceCollectionExtensions_AddDistributedCaching_
+  commentId: Overload:CG.Caching.ServiceCollectionExtensions.AddDistributedCaching
+  isSpec: "True"
+  fullName: CG.Caching.ServiceCollectionExtensions.AddDistributedCaching
+  nameWithType: ServiceCollectionExtensions.AddDistributedCaching
+- uid: CG.Caching.Strategies.Distributed
+  name: CG.Caching.Strategies.Distributed
+  href: api/CG.Caching.Strategies.Distributed.html
+  commentId: N:CG.Caching.Strategies.Distributed
+  fullName: CG.Caching.Strategies.Distributed
+  nameWithType: CG.Caching.Strategies.Distributed
+- uid: CG.Caching.Strategies.Distributed.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  href: api/CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.html
+  commentId: T:CG.Caching.Strategies.Distributed.ServiceCollectionExtensions
+  fullName: CG.Caching.Strategies.Distributed.ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+- uid: CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.AddDistributedMemoryStrategies(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.ServiceLifetime)
+  name: AddDistributedMemoryStrategies(IServiceCollection, IConfiguration, ServiceLifetime)
+  href: api/CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.html#CG_Caching_Strategies_Distributed_ServiceCollectionExtensions_AddDistributedMemoryStrategies_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_DependencyInjection_ServiceLifetime_
+  commentId: M:CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.AddDistributedMemoryStrategies(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.ServiceLifetime)
+  fullName: CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.AddDistributedMemoryStrategies(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.DependencyInjection.ServiceLifetime)
+  nameWithType: ServiceCollectionExtensions.AddDistributedMemoryStrategies(IServiceCollection, IConfiguration, ServiceLifetime)
+- uid: CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.AddDistributedMemoryStrategies*
+  name: AddDistributedMemoryStrategies
+  href: api/CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.html#CG_Caching_Strategies_Distributed_ServiceCollectionExtensions_AddDistributedMemoryStrategies_
+  commentId: Overload:CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.AddDistributedMemoryStrategies
+  isSpec: "True"
+  fullName: CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.AddDistributedMemoryStrategies
+  nameWithType: ServiceCollectionExtensions.AddDistributedMemoryStrategies
+- uid: Microsoft.Extensions.Caching.Distributed
+  name: Microsoft.Extensions.Caching.Distributed
+  href: api/Microsoft.Extensions.Caching.Distributed.html
+  commentId: N:Microsoft.Extensions.Caching.Distributed
+  fullName: Microsoft.Extensions.Caching.Distributed
+  nameWithType: Microsoft.Extensions.Caching.Distributed
+- uid: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions
+  name: DistributedCacheExtensions
+  href: api/Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.html
+  commentId: T:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions
+  fullName: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions
+  nameWithType: DistributedCacheExtensions
+- uid: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync*
+  name: GetAsync
+  href: api/Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.html#Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetAsync_
+  commentId: Overload:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync
+  isSpec: "True"
+  fullName: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync
+  nameWithType: DistributedCacheExtensions.GetAsync
+- uid: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Threading.CancellationToken)
+  name: GetAsync<T>(IDistributedCache, String, CancellationToken)
+  href: api/Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.html#Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetAsync__1_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_System_Threading_CancellationToken_
+  commentId: M:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Threading.CancellationToken)
+  name.vb: GetAsync(Of T)(IDistributedCache, String, CancellationToken)
+  fullName: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync<T>(Microsoft.Extensions.Caching.Distributed.IDistributedCache, System.String, System.Threading.CancellationToken)
+  fullName.vb: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync(Of T)(Microsoft.Extensions.Caching.Distributed.IDistributedCache, System.String, System.Threading.CancellationToken)
+  nameWithType: DistributedCacheExtensions.GetAsync<T>(IDistributedCache, String, CancellationToken)
+  nameWithType.vb: DistributedCacheExtensions.GetAsync(Of T)(IDistributedCache, String, CancellationToken)
+- uid: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync*
+  name: SetAsync
+  href: api/Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.html#Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_
+  commentId: Overload:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync
+  isSpec: "True"
+  fullName: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync
+  nameWithType: DistributedCacheExtensions.SetAsync
+- uid: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,``0,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Threading.CancellationToken)
+  name: SetAsync<T>(IDistributedCache, String, T, DistributedCacheEntryOptions, CancellationToken)
+  href: api/Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.html#Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync__1_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String___0_Microsoft_Extensions_Caching_Distributed_DistributedCacheEntryOptions_System_Threading_CancellationToken_
+  commentId: M:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,``0,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Threading.CancellationToken)
+  name.vb: SetAsync(Of T)(IDistributedCache, String, T, DistributedCacheEntryOptions, CancellationToken)
+  fullName: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync<T>(Microsoft.Extensions.Caching.Distributed.IDistributedCache, System.String, T, Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions, System.Threading.CancellationToken)
+  fullName.vb: Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync(Of T)(Microsoft.Extensions.Caching.Distributed.IDistributedCache, System.String, T, Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions, System.Threading.CancellationToken)
+  nameWithType: DistributedCacheExtensions.SetAsync<T>(IDistributedCache, String, T, DistributedCacheEntryOptions, CancellationToken)
+  nameWithType.vb: DistributedCacheExtensions.SetAsync(Of T)(IDistributedCache, String, T, DistributedCacheEntryOptions, CancellationToken)
