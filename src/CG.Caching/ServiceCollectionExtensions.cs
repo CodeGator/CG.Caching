@@ -53,7 +53,8 @@ namespace CG.Caching
             // Register the strategy(s).
             serviceCollection.AddStrategies(
                 configuration,
-                serviceLifetime
+                serviceLifetime,
+                "Caching"
                 );
 
             // Return the service collection.

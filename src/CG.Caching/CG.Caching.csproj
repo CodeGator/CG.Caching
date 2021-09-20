@@ -34,9 +34,9 @@ Platforms supported:
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CG.Business" Version="2021.3.1" />
-    <PackageReference Include="CG.DependencyInjection" Version="2021.3.1" />
-    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.220">
+    <PackageReference Include="CG.Business" Version="2021.3.3" />
+    <PackageReference Include="CG.DependencyInjection" Version="2021.3.2" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.231">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
