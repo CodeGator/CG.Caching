@@ -1,6 +1,11 @@
 # CG.Caching change log
 ---
 
+## 2022.1 
+
+* I switch the runtime to .net 6.0
+* bug fixes
+
 ## 2021.2
 
 * I removed my custom ICache type.
