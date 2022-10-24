@@ -14,11 +14,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.ServiceCollectionExtensions.yml",
+      "source_relative_path": "api/CG.Caching.Extensions.DistributedCacheExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Caching.ServiceCollectionExtensions.html",
-          "hash": "B6/vkZlcnft/W2jEWCQqCUMAiRtazqJM9BBbvs8pWFE="
+          "relative_path": "api/CG.Caching.Extensions.DistributedCacheExtensions.html",
+          "hash": "0NkpLnYyOqYMlMGufPDyFMB0suTzXfrjciJCg4LZBl4="
         }
       },
       "is_incremental": false,
@@ -26,59 +26,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.yml",
+      "source_relative_path": "api/CG.Caching.Extensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/CG.Caching.Strategies.Distributed.ServiceCollectionExtensions.html",
-          "hash": "iwQZt2k72bszdfIJtQBQM92WpBRn3LQbCODVsuGwwho="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.Strategies.Distributed.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.Strategies.Distributed.html",
-          "hash": "z7TJRJ+wUXRJ/RZR8tRr93fbrNFzqfsfSqhEvEetbYc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/CG.Caching.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/CG.Caching.html",
-          "hash": "e3Nj9M6gq34ce/heBEcspS/GN26czudGAQuW92inLRA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.html",
-          "hash": "J4FFOJbgAZ6LKd4/ffswDJ9Cod+mdcdyic6kCslUgyQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.Caching.Distributed.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.Extensions.Caching.Distributed.html",
-          "hash": "DfAUXX3KqaNwgso7TypkVQW2AfHWjmsd8gBS26SDyQE="
+          "relative_path": "api/CG.Caching.Extensions.html",
+          "hash": "R7ui3+6+5OkfYpTQ2l7l50PZFaDd2p7G1P/br1g/pNc="
         }
       },
       "is_incremental": false,
@@ -90,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "7vpOAvohhog5iqo3cmr7Hw50QTUV6wzthL5M9W5u8QM="
+          "hash": "ToqTyBCdJWX9XVLaiOBxF8umly35MBxJMcmysRS6KmU="
         }
       },
       "is_incremental": false,
@@ -102,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "LIWQTVQPlOrvvpc9+yUHnwTN6s4i4RGtDtwLMMautJE="
+          "hash": "N8Ul9dUCbgLfBc8rvcEgOxJxTpdtNo4cHCpLGbfLLW8="
         }
       },
       "is_incremental": false,
@@ -114,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "obA8+Wq2rRSOb8iJqgYOFxwlQvdF4RfUjt9LDoGwfMg="
+          "hash": "GSM6/qjA0Y6/lyPTFQFyqzR0RP/48E3IDhzCnmbB9WQ="
         }
       },
       "is_incremental": false,
@@ -182,7 +134,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "+TAmM2xAjZ/70Fe7Xcvtj5RRlwAomz5N8gDXp2h2RkE="
+          "hash": "qevcidt/USpbHDNbbY+5y3g2l6bMUqTJhpQRgPavopM="
         }
       },
       "is_incremental": false,
@@ -194,7 +146,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "oad/XD8GevGJB0RW5CcU/s0ej+IjEhDLghJnmwxqGxY="
+          "hash": "40qnEMz6gojdhXLePY+K/AgfsJxo7ogwlmUJtLaTfMs="
         }
       },
       "is_incremental": false,
@@ -221,7 +173,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 6,
+          "total_file_count": 2,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
