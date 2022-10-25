@@ -29,6 +29,49 @@ references:
   fullName.vb: CG.Caching.Extensions.DistributedCacheExtensions.GetAsync(Of T)(IDistributedCache, System.String, CancellationToken)
   nameWithType: DistributedCacheExtensions.GetAsync<T>(IDistributedCache, String, CancellationToken)
   nameWithType.vb: DistributedCacheExtensions.GetAsync(Of T)(IDistributedCache, String, CancellationToken)
+- uid: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache,System.String,DistributedCacheEntryOptions,Func{System.Byte[]},CancellationToken)
+  name: GetOrSetAsync(IDistributedCache, String, DistributedCacheEntryOptions, Func<Byte[]>, CancellationToken)
+  href: api/CG.Caching.Extensions.DistributedCacheExtensions.html#CG_Caching_Extensions_DistributedCacheExtensions_GetOrSetAsync_IDistributedCache_System_String_DistributedCacheEntryOptions_Func_System_Byte____CancellationToken_
+  commentId: M:CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache,System.String,DistributedCacheEntryOptions,Func{System.Byte[]},CancellationToken)
+  name.vb: GetOrSetAsync(IDistributedCache, String, DistributedCacheEntryOptions, Func(Of Byte()), CancellationToken)
+  fullName: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache, System.String, DistributedCacheEntryOptions, Func<System.Byte[]>, CancellationToken)
+  fullName.vb: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache, System.String, DistributedCacheEntryOptions, Func(Of System.Byte()), CancellationToken)
+  nameWithType: DistributedCacheExtensions.GetOrSetAsync(IDistributedCache, String, DistributedCacheEntryOptions, Func<Byte[]>, CancellationToken)
+  nameWithType.vb: DistributedCacheExtensions.GetOrSetAsync(IDistributedCache, String, DistributedCacheEntryOptions, Func(Of Byte()), CancellationToken)
+- uid: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache,System.String,Func{System.Byte[]},CancellationToken)
+  name: GetOrSetAsync(IDistributedCache, String, Func<Byte[]>, CancellationToken)
+  href: api/CG.Caching.Extensions.DistributedCacheExtensions.html#CG_Caching_Extensions_DistributedCacheExtensions_GetOrSetAsync_IDistributedCache_System_String_Func_System_Byte____CancellationToken_
+  commentId: M:CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache,System.String,Func{System.Byte[]},CancellationToken)
+  name.vb: GetOrSetAsync(IDistributedCache, String, Func(Of Byte()), CancellationToken)
+  fullName: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache, System.String, Func<System.Byte[]>, CancellationToken)
+  fullName.vb: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache, System.String, Func(Of System.Byte()), CancellationToken)
+  nameWithType: DistributedCacheExtensions.GetOrSetAsync(IDistributedCache, String, Func<Byte[]>, CancellationToken)
+  nameWithType.vb: DistributedCacheExtensions.GetOrSetAsync(IDistributedCache, String, Func(Of Byte()), CancellationToken)
+- uid: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync*
+  name: GetOrSetAsync
+  href: api/CG.Caching.Extensions.DistributedCacheExtensions.html#CG_Caching_Extensions_DistributedCacheExtensions_GetOrSetAsync_
+  commentId: Overload:CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync
+  isSpec: "True"
+  fullName: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync
+  nameWithType: DistributedCacheExtensions.GetOrSetAsync
+- uid: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync``1(IDistributedCache,System.String,DistributedCacheEntryOptions,Func{``0},CancellationToken)
+  name: GetOrSetAsync<T>(IDistributedCache, String, DistributedCacheEntryOptions, Func<T>, CancellationToken)
+  href: api/CG.Caching.Extensions.DistributedCacheExtensions.html#CG_Caching_Extensions_DistributedCacheExtensions_GetOrSetAsync__1_IDistributedCache_System_String_DistributedCacheEntryOptions_Func___0__CancellationToken_
+  commentId: M:CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync``1(IDistributedCache,System.String,DistributedCacheEntryOptions,Func{``0},CancellationToken)
+  name.vb: GetOrSetAsync(Of T)(IDistributedCache, String, DistributedCacheEntryOptions, Func(Of T), CancellationToken)
+  fullName: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync<T>(IDistributedCache, System.String, DistributedCacheEntryOptions, Func<T>, CancellationToken)
+  fullName.vb: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(Of T)(IDistributedCache, System.String, DistributedCacheEntryOptions, Func(Of T), CancellationToken)
+  nameWithType: DistributedCacheExtensions.GetOrSetAsync<T>(IDistributedCache, String, DistributedCacheEntryOptions, Func<T>, CancellationToken)
+  nameWithType.vb: DistributedCacheExtensions.GetOrSetAsync(Of T)(IDistributedCache, String, DistributedCacheEntryOptions, Func(Of T), CancellationToken)
+- uid: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync``1(IDistributedCache,System.String,Func{``0},CancellationToken)
+  name: GetOrSetAsync<T>(IDistributedCache, String, Func<T>, CancellationToken)
+  href: api/CG.Caching.Extensions.DistributedCacheExtensions.html#CG_Caching_Extensions_DistributedCacheExtensions_GetOrSetAsync__1_IDistributedCache_System_String_Func___0__CancellationToken_
+  commentId: M:CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync``1(IDistributedCache,System.String,Func{``0},CancellationToken)
+  name.vb: GetOrSetAsync(Of T)(IDistributedCache, String, Func(Of T), CancellationToken)
+  fullName: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync<T>(IDistributedCache, System.String, Func<T>, CancellationToken)
+  fullName.vb: CG.Caching.Extensions.DistributedCacheExtensions.GetOrSetAsync(Of T)(IDistributedCache, System.String, Func(Of T), CancellationToken)
+  nameWithType: DistributedCacheExtensions.GetOrSetAsync<T>(IDistributedCache, String, Func<T>, CancellationToken)
+  nameWithType.vb: DistributedCacheExtensions.GetOrSetAsync(Of T)(IDistributedCache, String, Func(Of T), CancellationToken)
 - uid: CG.Caching.Extensions.DistributedCacheExtensions.SetAsync(IDistributedCache,System.String,System.Object,CancellationToken)
   name: SetAsync(IDistributedCache, String, Object, CancellationToken)
   href: api/CG.Caching.Extensions.DistributedCacheExtensions.html#CG_Caching_Extensions_DistributedCacheExtensions_SetAsync_IDistributedCache_System_String_System_Object_CancellationToken_
