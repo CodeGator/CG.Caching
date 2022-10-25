@@ -1,6 +1,4 @@
 ﻿
-using System;
-
 namespace CG.Caching.Extensions
 {
     /// <summary>
@@ -24,7 +22,7 @@ namespace CG.Caching.Extensions
         /// <param name="token">A cancellation token that is monitored throughout
         /// the lifetime of the method.</param>
         /// <returns>A task to perform the operation.</returns>
-        public static async Task SetAsync(
+        public static async ValueTask SetAsync(
             this IDistributedCache cache,
             string key,
             object obj,
@@ -73,7 +71,7 @@ namespace CG.Caching.Extensions
         /// <param name="token">A cancellation token that is monitored throughout
         /// the lifetime of the method.</param>
         /// <returns>A task to perform the operation.</returns>
-        public static async Task SetAsync(
+        public static async ValueTask SetAsync(
             this IDistributedCache cache,
             string key,
             object obj,
@@ -124,7 +122,7 @@ namespace CG.Caching.Extensions
         /// the lifetime of the method.</param>
         /// <returns>A task to perform the operation that returns the specified
         /// cached object.</returns>
-        public static async Task<T> GetAsync<T>(
+        public static async ValueTask<T> GetAsync<T>(
             this IDistributedCache cache,
             string key,
             CancellationToken token = default
@@ -159,6 +157,220 @@ namespace CG.Caching.Extensions
                     AllowTrailingCommas = true,
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 });
+
+            // Return the results.
+            return obj;
+        }
+
+        // *******************************************************************
+
+        /// <summary>
+        /// This method attempts to get the object associated with the given
+        /// key. If the key is not found, the <paramref name="setDelegate"/>
+        /// is called to create the object, which is then set in the cache using
+        /// the <paramref name="key"/> value.
+        /// </summary>
+        /// <param name="cache">The cache to use for the operation.</param>
+        /// <param name="key">The key to use for the operation.</param>
+        /// <param name="setDelegate">The delegate to call in the event the
+        /// key does not belong to the cache.</param>
+        /// <param name="token">A cancellation token that is monitored throughout
+        /// the lifetime of the method.</param>
+        /// <returns>The value of the object associated with the given key.</returns>
+        public static async ValueTask<byte[]> GetOrSetAsync(
+            this IDistributedCache cache,
+            string key,
+            Func<byte[]> setDelegate,
+            CancellationToken token = default
+            ) 
+        {
+            // Validate the parameters before attempting to use them.
+            Guard.Instance().ThrowIfNull(cache, nameof(cache))
+                .ThrowIfNullOrEmpty(key, nameof(key))
+                .ThrowIfNull(setDelegate, nameof(setDelegate));
+
+            // Call the overload.
+            var bytes = await cache.GetAsync(
+                key,
+                token
+                ).ConfigureAwait(false);
+
+            // Did we fail?
+            if (bytes is null)
+            {
+                // Create the data.
+                bytes = setDelegate.Invoke();
+
+                // Set the data in the cache.
+                await SetAsync(
+                    cache, 
+                    key, 
+                    bytes
+                    ).ConfigureAwait(false);  
+            }
+
+            // Return the results.
+            return bytes;
+        }
+
+        // *******************************************************************
+
+        /// <summary>
+        /// This method attempts to get the object associated with the given
+        /// key. If the key is not found, the <paramref name="setDelegate"/>
+        /// is called to create the object, which is then set in the cache using
+        /// the <paramref name="key"/> value.
+        /// </summary>
+        /// <param name="cache">The cache to use for the operation.</param>
+        /// <param name="key">The key to use for the operation.</param>
+        /// <param name="options">The cache options to use for the operation.</param>
+        /// <param name="setDelegate">The delegate to call in the event the
+        /// key does not belong to the cache.</param>
+        /// <param name="token">A cancellation token that is monitored throughout
+        /// the lifetime of the method.</param>
+        /// <returns>The value of the object associated with the given key.</returns>
+        public static async ValueTask<byte[]> GetOrSetAsync(
+            this IDistributedCache cache,
+            string key,
+            DistributedCacheEntryOptions options,
+            Func<byte[]> setDelegate,
+            CancellationToken token = default
+            )
+        {
+            // Validate the parameters before attempting to use them.
+            Guard.Instance().ThrowIfNull(cache, nameof(cache))
+                .ThrowIfNullOrEmpty(key, nameof(key))
+                .ThrowIfNull(options, nameof(options))
+                .ThrowIfNull(setDelegate, nameof(setDelegate));
+
+            // Call the overload.
+            var bytes = await cache.GetAsync(
+                key,
+                token
+                ).ConfigureAwait(false);
+
+            // Did we fail?
+            if (bytes is null)
+            {
+                // Create the data.
+                bytes = setDelegate.Invoke();
+
+                // Set the data in the cache.
+                await SetAsync(
+                    cache,
+                    key,
+                    bytes,
+                    options
+                    ).ConfigureAwait(false);
+            }
+
+            // Return the results.
+            return bytes;
+        }
+
+        // *******************************************************************
+
+        /// <summary>
+        /// This method attempts to get the object associated with the given
+        /// key. If the key is not found, the <paramref name="setDelegate"/>
+        /// is called to create the object, which is then set in the cache using
+        /// the <paramref name="key"/> value.
+        /// </summary>
+        /// <typeparam name="T">The type of associated object.</typeparam>
+        /// <param name="cache">The cache to use for the operation.</param>
+        /// <param name="key">The key to use for the operation.</param>
+        /// <param name="setDelegate">The delegate to call in the event the
+        /// key does not belong to the cache.</param>
+        /// <param name="token">A cancellation token that is monitored throughout
+        /// the lifetime of the method.</param>
+        /// <returns>The value of the object associated with the given key.</returns>
+        public static async ValueTask<T> GetOrSetAsync<T>(
+            this IDistributedCache cache,
+            string key,
+            Func<T> setDelegate,
+            CancellationToken token = default
+            ) where T : class
+        {
+            // Validate the parameters before attempting to use them.
+            Guard.Instance().ThrowIfNull(cache, nameof(cache))
+                .ThrowIfNullOrEmpty(key, nameof(key))
+                .ThrowIfNull(setDelegate, nameof(setDelegate));
+
+            // Call the overload.
+            var obj = await cache.GetAsync<T>(
+                key,
+                token
+                ).ConfigureAwait(false);
+
+            // Did we fail?
+            if (obj is null)
+            {
+                // Create the object.
+                obj = setDelegate.Invoke();
+
+                // Set the object in the cache.
+                await SetAsync(
+                    cache,
+                    key,
+                    obj
+                    ).ConfigureAwait(false);
+            }
+
+            // Return the results.
+            return obj;
+        }
+
+        // *******************************************************************
+
+        /// <summary>
+        /// This method attempts to get the object associated with the given
+        /// key. If the key is not found, the <paramref name="setDelegate"/>
+        /// is called to create the object, which is then set in the cache using
+        /// the <paramref name="key"/> value.
+        /// </summary>
+        /// <typeparam name="T">The type of associated object.</typeparam>
+        /// <param name="cache">The cache to use for the operation.</param>
+        /// <param name="key">The key to use for the operation.</param>
+        /// <param name="options">The cache options to use for the operation.</param>
+        /// <param name="setDelegate">The delegate to call in the event the
+        /// key does not belong to the cache.</param>
+        /// <param name="token">A cancellation token that is monitored throughout
+        /// the lifetime of the method.</param>
+        /// <returns>The value of the object associated with the given key.</returns>
+        public static async ValueTask<T> GetOrSetAsync<T>(
+            this IDistributedCache cache,
+            string key,
+            DistributedCacheEntryOptions options,
+            Func<T> setDelegate,
+            CancellationToken token = default
+            ) where T : class
+        {
+            // Validate the parameters before attempting to use them.
+            Guard.Instance().ThrowIfNull(cache, nameof(cache))
+                .ThrowIfNullOrEmpty(key, nameof(key))
+                .ThrowIfNull(options, nameof(options))
+                .ThrowIfNull(setDelegate, nameof(setDelegate));
+
+            // Call the overload.
+            var obj = await cache.GetAsync<T>(
+                key,
+                token
+                ).ConfigureAwait(false);
+
+            // Did we fail?
+            if (obj is null)
+            {
+                // Create the object.
+                obj = setDelegate.Invoke();
+
+                // Set the object in the cache.
+                await SetAsync(
+                    cache,
+                    key,
+                    obj,
+                    options
+                    ).ConfigureAwait(false);
+            }
 
             // Return the results.
             return obj;
