@@ -1,5 +1,5 @@
 ﻿
-namespace CG.Caching.Extensions
+namespace CG.Caching
 {
     /// <summary>
     /// This class contains extension methods related to the <see cref="IDistributedCache"/>
