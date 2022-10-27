@@ -43,6 +43,15 @@ namespace Microsoft.Extensions.Caching.Distributed
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 });
 
+            // Did we fail?
+            if (string.IsNullOrEmpty(json))
+            {
+                // Panic!!
+                throw new JsonException(
+                    $"The object failed to serialize for key: '{key}'"
+                    );
+            }
+
             // Convert the JSON to bytes.
             var bytes = Encoding.UTF8.GetBytes(
                 json,
@@ -94,6 +103,15 @@ namespace Microsoft.Extensions.Caching.Distributed
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 });
 
+            // Did we fail?
+            if (string.IsNullOrEmpty(json))
+            {
+                // Panic!!
+                throw new JsonException(
+                    $"The object failed to serialize for key: '{key}'"
+                    );
+            }
+
             // Convert the JSON to bytes.
             var bytes = Encoding.UTF8.GetBytes(
                 json, 
@@ -139,7 +157,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 ).ConfigureAwait(false);
 
             // Did we fail?
-            if (!bytes.Any())
+            if (bytes is null || !bytes.Any())
             {
                 return null; // Wasn't in the cache.
             }
@@ -196,7 +214,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 ).ConfigureAwait(false);
 
             // Did we fail?
-            if (!bytes.Any())
+            if (bytes is null || !bytes.Any())
             {
                 // Create the data.
                 bytes = setDelegate.Invoke();
@@ -255,6 +273,15 @@ namespace Microsoft.Extensions.Caching.Distributed
                 // Create the data.
                 bytes = setDelegate.Invoke();
 
+                // Did we fail?
+                if (bytes is null || !bytes.Any())
+                {
+                    // Panic!!
+                    throw new JsonException(
+                        $"The delegate failed to return data for key: '{key}'"
+                        );
+                }
+
                 // Set the data in the cache.
                 await SetAsync(
                     cache,
@@ -307,6 +334,15 @@ namespace Microsoft.Extensions.Caching.Distributed
             {
                 // Create the object.
                 obj = setDelegate.Invoke();
+
+                // Did we fail?
+                if (obj is null)
+                {
+                    // Panic!!
+                    throw new JsonException(
+                        $"The delegate returned NULL for key: '{key}'"
+                        );
+                }
 
                 // Set the object in the cache.
                 await SetAsync(
@@ -362,6 +398,15 @@ namespace Microsoft.Extensions.Caching.Distributed
             {
                 // Create the object.
                 obj = setDelegate.Invoke();
+
+                // Did we fail?
+                if (obj is null)
+                {
+                    // Panic!!
+                    throw new JsonException(
+                        $"The delegate returned NULL for key: '{key}'"
+                        );
+                }
 
                 // Set the object in the cache.
                 await SetAsync(
