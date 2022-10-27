@@ -78,12 +78,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="CG.Caching.DistributedCacheExtensions">
+            <article class="content wrap" id="_content" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions">
   
   
-  <h1 id="CG_Caching_DistributedCacheExtensions" data-uid="CG.Caching.DistributedCacheExtensions" class="text-break">Class DistributedCacheExtensions
+  <h1 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions" class="text-break">Class DistributedCacheExtensions
   </h1>
-  <div class="markdown level0 summary"><p>This class contains extension methods related to the <see cref="!:IDistributedCache"></see>
+  <div class="markdown level0 summary"><p>This class contains extension methods related to the <span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span>
 type.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -116,16 +116,16 @@ type.</p>
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="CG.Caching.html">CG.Caching</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.Extensions.Caching.Distributed.html">Microsoft.Extensions.Caching.Distributed</a></h6>
   <h6><strong>Assembly</strong>: CG.Caching.dll</h6>
-  <h5 id="CG_Caching_DistributedCacheExtensions_syntax">Syntax</h5>
+  <h5 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class DistributedCacheExtensions</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <a id="CG_Caching_DistributedCacheExtensions_GetAsync_" data-uid="CG.Caching.DistributedCacheExtensions.GetAsync*"></a>
-  <h4 id="CG_Caching_DistributedCacheExtensions_GetAsync__1_IDistributedCache_System_String_CancellationToken_" data-uid="CG.Caching.DistributedCacheExtensions.GetAsync``1(IDistributedCache,System.String,CancellationToken)">GetAsync&lt;T&gt;(IDistributedCache, String, CancellationToken)</h4>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetAsync__1_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,CancellationToken)">GetAsync&lt;T&gt;(IDistributedCache, String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method gets the specified object from the cache.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -145,7 +145,7 @@ type.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDistributedCache</span></td>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
         <td><span class="parametername">cache</span></td>
         <td><p>The cache to use for the operation.</p>
 </td>
@@ -198,80 +198,8 @@ cached object.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Caching_DistributedCacheExtensions_GetOrSetAsync_" data-uid="CG.Caching.DistributedCacheExtensions.GetOrSetAsync*"></a>
-  <h4 id="CG_Caching_DistributedCacheExtensions_GetOrSetAsync_IDistributedCache_System_String_DistributedCacheEntryOptions_Func_System_Byte____CancellationToken_" data-uid="CG.Caching.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache,System.String,DistributedCacheEntryOptions,Func{System.Byte[]},CancellationToken)">GetOrSetAsync(IDistributedCache, String, DistributedCacheEntryOptions, Func&lt;Byte[]&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method attempts to get the object associated with the given
-key. If the key is not found, the <code data-dev-comment-type="paramref" class="paramref">setDelegate</code>
-is called to create the object, which is then set in the cache using
-the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async ValueTask&lt;byte[]&gt; GetOrSetAsync(this IDistributedCache cache, string key, DistributedCacheEntryOptions options, Func&lt;byte[]&gt; setDelegate, CancellationToken token = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IDistributedCache</span></td>
-        <td><span class="parametername">cache</span></td>
-        <td><p>The cache to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>The key to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">DistributedCacheEntryOptions</span></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The cache options to use for the operation.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Func</span>&lt;<span class="xref">System.Byte</span>[]&gt;</td>
-        <td><span class="parametername">setDelegate</span></td>
-        <td><p>The delegate to call in the event the
-key does not belong to the cache.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">token</span></td>
-        <td><p>A cancellation token that is monitored throughout
-the lifetime of the method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ValueTask</span>&lt;<span class="xref">System.Byte</span>[]&gt;</td>
-        <td><p>The value of the object associated with the given key.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Caching_DistributedCacheExtensions_GetOrSetAsync_" data-uid="CG.Caching.DistributedCacheExtensions.GetOrSetAsync*"></a>
-  <h4 id="CG_Caching_DistributedCacheExtensions_GetOrSetAsync_IDistributedCache_System_String_Func_System_Byte____CancellationToken_" data-uid="CG.Caching.DistributedCacheExtensions.GetOrSetAsync(IDistributedCache,System.String,Func{System.Byte[]},CancellationToken)">GetOrSetAsync(IDistributedCache, String, Func&lt;Byte[]&gt;, CancellationToken)</h4>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_Func_System_Byte____CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,Func{System.Byte[]},CancellationToken)">GetOrSetAsync(IDistributedCache, String, Func&lt;Byte[]&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method attempts to get the object associated with the given
 key. If the key is not found, the <code data-dev-comment-type="paramref" class="paramref">setDelegate</code>
 is called to create the object, which is then set in the cache using
@@ -293,7 +221,7 @@ the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDistributedCache</span></td>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
         <td><span class="parametername">cache</span></td>
         <td><p>The cache to use for the operation.</p>
 </td>
@@ -336,8 +264,8 @@ the lifetime of the method.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Caching_DistributedCacheExtensions_GetOrSetAsync_" data-uid="CG.Caching.DistributedCacheExtensions.GetOrSetAsync*"></a>
-  <h4 id="CG_Caching_DistributedCacheExtensions_GetOrSetAsync__1_IDistributedCache_System_String_DistributedCacheEntryOptions_Func___0__CancellationToken_" data-uid="CG.Caching.DistributedCacheExtensions.GetOrSetAsync``1(IDistributedCache,System.String,DistributedCacheEntryOptions,Func{``0},CancellationToken)">GetOrSetAsync&lt;T&gt;(IDistributedCache, String, DistributedCacheEntryOptions, Func&lt;T&gt;, CancellationToken)</h4>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_Microsoft_Extensions_Caching_Distributed_DistributedCacheEntryOptions_Func_System_Byte____CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,Func{System.Byte[]},CancellationToken)">GetOrSetAsync(IDistributedCache, String, DistributedCacheEntryOptions, Func&lt;Byte[]&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method attempts to get the object associated with the given
 key. If the key is not found, the <code data-dev-comment-type="paramref" class="paramref">setDelegate</code>
 is called to create the object, which is then set in the cache using
@@ -346,8 +274,7 @@ the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async ValueTask&lt;T&gt; GetOrSetAsync&lt;T&gt;(this IDistributedCache cache, string key, DistributedCacheEntryOptions options, Func&lt;T&gt; setDelegate, CancellationToken token = null)
-    where T : class</code></pre>
+    <pre><code class="lang-csharp hljs">public static async ValueTask&lt;byte[]&gt; GetOrSetAsync(this IDistributedCache cache, string key, DistributedCacheEntryOptions options, Func&lt;byte[]&gt; setDelegate, CancellationToken token = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -360,7 +287,7 @@ the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDistributedCache</span></td>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
         <td><span class="parametername">cache</span></td>
         <td><p>The cache to use for the operation.</p>
 </td>
@@ -372,13 +299,13 @@ the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p
 </td>
       </tr>
       <tr>
-        <td><span class="xref">DistributedCacheEntryOptions</span></td>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions</span></td>
         <td><span class="parametername">options</span></td>
         <td><p>The cache options to use for the operation.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;T&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">System.Byte</span>[]&gt;</td>
         <td><span class="parametername">setDelegate</span></td>
         <td><p>The delegate to call in the event the
 key does not belong to the cache.</p>
@@ -403,30 +330,14 @@ the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ValueTask</span>&lt;T&gt;</td>
+        <td><span class="xref">ValueTask</span>&lt;<span class="xref">System.Byte</span>[]&gt;</td>
         <td><p>The value of the object associated with the given key.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of associated object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="CG_Caching_DistributedCacheExtensions_GetOrSetAsync_" data-uid="CG.Caching.DistributedCacheExtensions.GetOrSetAsync*"></a>
-  <h4 id="CG_Caching_DistributedCacheExtensions_GetOrSetAsync__1_IDistributedCache_System_String_Func___0__CancellationToken_" data-uid="CG.Caching.DistributedCacheExtensions.GetOrSetAsync``1(IDistributedCache,System.String,Func{``0},CancellationToken)">GetOrSetAsync&lt;T&gt;(IDistributedCache, String, Func&lt;T&gt;, CancellationToken)</h4>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync__1_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_Func___0__CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,Func{``0},CancellationToken)">GetOrSetAsync&lt;T&gt;(IDistributedCache, String, Func&lt;T&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method attempts to get the object associated with the given
 key. If the key is not found, the <code data-dev-comment-type="paramref" class="paramref">setDelegate</code>
 is called to create the object, which is then set in the cache using
@@ -449,7 +360,7 @@ the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDistributedCache</span></td>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
         <td><span class="parametername">cache</span></td>
         <td><p>The cache to use for the operation.</p>
 </td>
@@ -508,8 +419,97 @@ the lifetime of the method.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Caching_DistributedCacheExtensions_SetAsync_" data-uid="CG.Caching.DistributedCacheExtensions.SetAsync*"></a>
-  <h4 id="CG_Caching_DistributedCacheExtensions_SetAsync_IDistributedCache_System_String_System_Object_CancellationToken_" data-uid="CG.Caching.DistributedCacheExtensions.SetAsync(IDistributedCache,System.String,System.Object,CancellationToken)">SetAsync(IDistributedCache, String, Object, CancellationToken)</h4>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync__1_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_Microsoft_Extensions_Caching_Distributed_DistributedCacheEntryOptions_Func___0__CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,Func{``0},CancellationToken)">GetOrSetAsync&lt;T&gt;(IDistributedCache, String, DistributedCacheEntryOptions, Func&lt;T&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method attempts to get the object associated with the given
+key. If the key is not found, the <code data-dev-comment-type="paramref" class="paramref">setDelegate</code>
+is called to create the object, which is then set in the cache using
+the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async ValueTask&lt;T&gt; GetOrSetAsync&lt;T&gt;(this IDistributedCache cache, string key, DistributedCacheEntryOptions options, Func&lt;T&gt; setDelegate, CancellationToken token = null)
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>The cache to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions</span></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The cache options to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T&gt;</td>
+        <td><span class="parametername">setDelegate</span></td>
+        <td><p>The delegate to call in the event the
+key does not belong to the cache.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>A cancellation token that is monitored throughout
+the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ValueTask</span>&lt;T&gt;</td>
+        <td><p>The value of the object associated with the given key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of associated object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_System_Object_CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Object,CancellationToken)">SetAsync(IDistributedCache, String, Object, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method sets the specified object into the cache.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -528,7 +528,7 @@ the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDistributedCache</span></td>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
         <td><span class="parametername">cache</span></td>
         <td><p>The cache to use for the operation.</p>
 </td>
@@ -570,8 +570,8 @@ the lifetime of the method.</p>
       </tr>
     </tbody>
   </table>
-  <a id="CG_Caching_DistributedCacheExtensions_SetAsync_" data-uid="CG.Caching.DistributedCacheExtensions.SetAsync*"></a>
-  <h4 id="CG_Caching_DistributedCacheExtensions_SetAsync_IDistributedCache_System_String_System_Object_DistributedCacheEntryOptions_CancellationToken_" data-uid="CG.Caching.DistributedCacheExtensions.SetAsync(IDistributedCache,System.String,System.Object,DistributedCacheEntryOptions,CancellationToken)">SetAsync(IDistributedCache, String, Object, DistributedCacheEntryOptions, CancellationToken)</h4>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_System_Object_Microsoft_Extensions_Caching_Distributed_DistributedCacheEntryOptions_CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Object,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,CancellationToken)">SetAsync(IDistributedCache, String, Object, DistributedCacheEntryOptions, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>This method sets the specified object into the cache.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -590,7 +590,7 @@ the lifetime of the method.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDistributedCache</span></td>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
         <td><span class="parametername">cache</span></td>
         <td><p>The cache to use for the operation.</p>
 </td>
@@ -608,7 +608,7 @@ the lifetime of the method.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">DistributedCacheEntryOptions</span></td>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions</span></td>
         <td><span class="parametername">entryOptions</span></td>
         <td><p>The caching entry options to use for
 the operation.</p>
