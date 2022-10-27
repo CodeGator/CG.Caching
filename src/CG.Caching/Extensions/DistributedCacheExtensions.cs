@@ -1,5 +1,5 @@
 ﻿
-namespace CG.Caching
+namespace Microsoft.Extensions.Caching.Distributed
 {
     /// <summary>
     /// This class contains extension methods related to the <see cref="IDistributedCache"/>
@@ -139,7 +139,7 @@ namespace CG.Caching
                 ).ConfigureAwait(false);
 
             // Did we fail?
-            if (null == bytes)
+            if (!bytes.Any())
             {
                 return null; // Wasn't in the cache.
             }
@@ -196,7 +196,7 @@ namespace CG.Caching
                 ).ConfigureAwait(false);
 
             // Did we fail?
-            if (bytes is null)
+            if (!bytes.Any())
             {
                 // Create the data.
                 bytes = setDelegate.Invoke();

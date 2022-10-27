@@ -1,5 +1,5 @@
 ﻿global using CG.Validations;
-global using Microsoft.Extensions.Caching.Distributed;
+global using System.Linq;
 global using System.Text;
 global using System.Text.Json;
 global using System.Threading;
