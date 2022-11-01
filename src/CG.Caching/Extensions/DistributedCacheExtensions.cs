@@ -298,8 +298,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 bytes = setDelegate.Invoke();
 
                 // Set the data in the cache.
-                await SetAsync(
-                    cache, 
+                await cache.SetAsync(
                     key, 
                     bytes
                     ).ConfigureAwait(false);  
@@ -357,8 +356,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 bytes = Encoding.UTF8.GetBytes(value);
 
                 // Set the bytes in the cache.
-                await SetAsync(
-                    cache,
+                await cache.SetAsync(
                     key,
                     bytes,
                     options
@@ -426,8 +424,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 }
 
                 // Set the data in the cache.
-                await SetAsync(
-                    cache,
+                await cache.SetAsync(
                     key,
                     bytes,
                     options
@@ -483,8 +480,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 bytes = Encoding.UTF8.GetBytes(value);
 
                 // Set the bytes in the cache.
-                await SetAsync(
-                    cache,
+                await cache.SetAsync(
                     key,
                     bytes
                     ).ConfigureAwait(false);
@@ -549,8 +545,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 }
 
                 // Set the object in the cache.
-                await SetAsync(
-                    cache,
+                await cache.SetAsync(
                     key,
                     obj
                     ).ConfigureAwait(false);
@@ -613,8 +608,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 }
 
                 // Set the object in the cache.
-                await SetAsync(
-                    cache,
+                await cache.SetAsync(
                     key,
                     obj,
                     options
