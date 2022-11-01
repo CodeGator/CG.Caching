@@ -265,8 +265,74 @@ the lifetime of the method.</p>
     </tbody>
   </table>
   <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_Func_System_String__CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,Func{System.String},CancellationToken)">GetOrSetAsync(IDistributedCache, String, Func&lt;String&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method attempts to get the string associated with the given
+key. If the key is not found, the <code data-dev-comment-type="paramref" class="paramref">setDelegate</code>
+is called to create the string, which is then set in the cache using
+the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async ValueTask&lt;string&gt; GetOrSetAsync(this IDistributedCache cache, string key, Func&lt;string&gt; setDelegate, CancellationToken token = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>The cache to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">setDelegate</span></td>
+        <td><p>The delegate to call in the event the
+key does not belong to the cache.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>A cancellation token that is monitored throughout
+the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ValueTask</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>The value of the string associated with the given key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync*"></a>
   <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_Microsoft_Extensions_Caching_Distributed_DistributedCacheEntryOptions_Func_System_Byte____CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,Func{System.Byte[]},CancellationToken)">GetOrSetAsync(IDistributedCache, String, DistributedCacheEntryOptions, Func&lt;Byte[]&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>This method attempts to get the object associated with the given
+  <div class="markdown level1 summary"><p>This method attempts to get the bytes associated with the given
 key. If the key is not found, the <code data-dev-comment-type="paramref" class="paramref">setDelegate</code>
 is called to create the object, which is then set in the cache using
 the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p>
@@ -331,7 +397,79 @@ the lifetime of the method.</p>
     <tbody>
       <tr>
         <td><span class="xref">ValueTask</span>&lt;<span class="xref">System.Byte</span>[]&gt;</td>
-        <td><p>The value of the object associated with the given key.</p>
+        <td><p>The value of the bytes associated with the given key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_GetOrSetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_Microsoft_Extensions_Caching_Distributed_DistributedCacheEntryOptions_Func_System_String__CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetOrSetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,Func{System.String},CancellationToken)">GetOrSetAsync(IDistributedCache, String, DistributedCacheEntryOptions, Func&lt;String&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method attempts to get the string associated with the given
+key. If the key is not found, the <code data-dev-comment-type="paramref" class="paramref">setDelegate</code>
+is called to create the string, which is then set in the cache using
+the <code data-dev-comment-type="paramref" class="paramref">key</code> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async ValueTask&lt;string&gt; GetOrSetAsync(this IDistributedCache cache, string key, DistributedCacheEntryOptions options, Func&lt;string&gt; setDelegate, CancellationToken token = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>The cache to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions</span></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The cache options to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">setDelegate</span></td>
+        <td><p>The delegate to call in the event the
+key does not belong to the cache.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>A cancellation token that is monitored throughout
+the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ValueTask</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>The value of the string associated with the given key.</p>
 </td>
       </tr>
     </tbody>
@@ -605,6 +743,137 @@ the lifetime of the method.</p>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">obj</span></td>
         <td><p>The object reference to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions</span></td>
+        <td><span class="parametername">entryOptions</span></td>
+        <td><p>The caching entry options to use for
+the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>A cancellation token that is monitored throughout
+the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ValueTask</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_System_String_CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.String,CancellationToken)">SetAsync(IDistributedCache, String, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sets the specified string into the cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async ValueTask SetAsync(this IDistributedCache cache, string key, string value, CancellationToken token = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>The cache to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The string to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>A cancellation token that is monitored throughout
+the lifetime of the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ValueTask</span></td>
+        <td><p>A task to perform the operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync*"></a>
+  <h4 id="Microsoft_Extensions_Caching_Distributed_DistributedCacheExtensions_SetAsync_Microsoft_Extensions_Caching_Distributed_IDistributedCache_System_String_System_String_Microsoft_Extensions_Caching_Distributed_DistributedCacheEntryOptions_CancellationToken_" data-uid="Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetAsync(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.String,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,CancellationToken)">SetAsync(IDistributedCache, String, String, DistributedCacheEntryOptions, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>This method sets the specified string into the cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async ValueTask SetAsync(this IDistributedCache cache, string key, string value, DistributedCacheEntryOptions entryOptions, CancellationToken token = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Caching.Distributed.IDistributedCache</span></td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>The cache to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to use for the operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to use for the operation.</p>
 </td>
       </tr>
       <tr>
