@@ -14,6 +14,43 @@ namespace Microsoft.Extensions.Caching.Distributed
         #region Public methods
 
         /// <summary>
+        /// This method sets the specified string into the cache.
+        /// </summary>
+        /// <param name="cache">The cache to use for the operation.</param>
+        /// <param name="key">The key to use for the operation.</param>
+        /// <param name="value">The string to use for the operation.</param>
+        /// <param name="token">A cancellation token that is monitored throughout
+        /// the lifetime of the method.</param>
+        /// <returns>A task to perform the operation.</returns>
+        public static async ValueTask SetAsync(
+            this IDistributedCache cache,
+            string key,
+            string value,
+            CancellationToken token = default
+            )
+        {
+            // Validate the parameters before attempting to use them.
+            Guard.Instance().ThrowIfNull(cache, nameof(cache))
+                .ThrowIfNullOrEmpty(key, nameof(key));
+
+            // Convert the value to bytes.
+            var bytes = Encoding.UTF8.GetBytes(
+                value,
+                0,
+                value.Length
+                );
+
+            // Cache the bytes.
+            await cache.SetAsync(
+                key,
+                bytes,
+                token
+                ).ConfigureAwait(false);
+        }
+
+        // *******************************************************************
+
+        /// <summary>
         /// This method sets the specified object into the cache.
         /// </summary>
         /// <param name="cache">The cache to use for the operation.</param>
@@ -63,6 +100,47 @@ namespace Microsoft.Extensions.Caching.Distributed
             await cache.SetAsync(
                 key,
                 bytes,
+                token
+                ).ConfigureAwait(false);
+        }
+
+        // *******************************************************************
+
+        /// <summary>
+        /// This method sets the specified string into the cache.
+        /// </summary>
+        /// <param name="cache">The cache to use for the operation.</param>
+        /// <param name="key">The key to use for the operation.</param>
+        /// <param name="value">The value to use for the operation.</param>
+        /// <param name="entryOptions">The caching entry options to use for 
+        /// the operation.</param>
+        /// <param name="token">A cancellation token that is monitored throughout
+        /// the lifetime of the method.</param>
+        /// <returns>A task to perform the operation.</returns>
+        public static async ValueTask SetAsync(
+            this IDistributedCache cache,
+            string key,
+            string value,
+            DistributedCacheEntryOptions entryOptions,
+            CancellationToken token = default
+            )
+        {
+            // Validate the parameters before attempting to use them.
+            Guard.Instance().ThrowIfNull(cache, nameof(cache))
+                .ThrowIfNullOrEmpty(key, nameof(key));
+
+            // Convert the value to bytes.
+            var bytes = Encoding.UTF8.GetBytes(
+                value,
+                0,
+                value.Length
+                );
+
+            // Cache the bytes.
+            await cache.SetAsync(
+                key,
+                bytes,
+                entryOptions,
                 token
                 ).ConfigureAwait(false);
         }
@@ -234,7 +312,72 @@ namespace Microsoft.Extensions.Caching.Distributed
         // *******************************************************************
 
         /// <summary>
-        /// This method attempts to get the object associated with the given
+        /// This method attempts to get the string associated with the given
+        /// key. If the key is not found, the <paramref name="setDelegate"/>
+        /// is called to create the string, which is then set in the cache using
+        /// the <paramref name="key"/> value.
+        /// </summary>
+        /// <param name="cache">The cache to use for the operation.</param>
+        /// <param name="key">The key to use for the operation.</param>
+        /// <param name="options">The cache options to use for the operation.</param>
+        /// <param name="setDelegate">The delegate to call in the event the
+        /// key does not belong to the cache.</param>
+        /// <param name="token">A cancellation token that is monitored throughout
+        /// the lifetime of the method.</param>
+        /// <returns>The value of the string associated with the given key.</returns>
+        public static async ValueTask<string> GetOrSetAsync(
+            this IDistributedCache cache,
+            string key,
+            DistributedCacheEntryOptions options,
+            Func<string> setDelegate,
+            CancellationToken token = default
+            )
+        {
+            // Validate the parameters before attempting to use them.
+            Guard.Instance().ThrowIfNull(cache, nameof(cache))
+                .ThrowIfNullOrEmpty(key, nameof(key))
+                .ThrowIfNull(options, nameof(options))
+                .ThrowIfNull(setDelegate, nameof(setDelegate));
+
+            // Call the overload.
+            var bytes = await cache.GetAsync(
+                key,
+                token
+                ).ConfigureAwait(false);
+
+            var value = "";
+
+            // Did we fail?
+            if (bytes is null || !bytes.Any())
+            {
+                // Create the value.
+                value = setDelegate.Invoke();
+
+                // Convert to bytes.
+                bytes = Encoding.UTF8.GetBytes(value);
+
+                // Set the bytes in the cache.
+                await SetAsync(
+                    cache,
+                    key,
+                    bytes,
+                    options
+                    ).ConfigureAwait(false);
+            }
+            else
+            {
+                // Convert to a string.
+                value = Encoding.UTF8.GetString(bytes);
+            }
+
+            // Return the results.
+            return value;
+        }
+
+        // *******************************************************************
+
+        /// <summary>
+        /// This method attempts to get the bytes associated with the given
         /// key. If the key is not found, the <paramref name="setDelegate"/>
         /// is called to create the object, which is then set in the cache using
         /// the <paramref name="key"/> value.
@@ -246,7 +389,7 @@ namespace Microsoft.Extensions.Caching.Distributed
         /// key does not belong to the cache.</param>
         /// <param name="token">A cancellation token that is monitored throughout
         /// the lifetime of the method.</param>
-        /// <returns>The value of the object associated with the given key.</returns>
+        /// <returns>The value of the bytes associated with the given key.</returns>
         public static async ValueTask<byte[]> GetOrSetAsync(
             this IDistributedCache cache,
             string key,
@@ -268,7 +411,7 @@ namespace Microsoft.Extensions.Caching.Distributed
                 ).ConfigureAwait(false);
 
             // Did we fail?
-            if (bytes is null)
+            if (bytes is null || !bytes.Any())
             {
                 // Create the data.
                 bytes = setDelegate.Invoke();
@@ -293,6 +436,67 @@ namespace Microsoft.Extensions.Caching.Distributed
 
             // Return the results.
             return bytes;
+        }
+
+        // *******************************************************************
+
+        /// <summary>
+        /// This method attempts to get the string associated with the given
+        /// key. If the key is not found, the <paramref name="setDelegate"/>
+        /// is called to create the string, which is then set in the cache using
+        /// the <paramref name="key"/> value.
+        /// </summary>
+        /// <param name="cache">The cache to use for the operation.</param>
+        /// <param name="key">The key to use for the operation.</param>
+        /// <param name="setDelegate">The delegate to call in the event the
+        /// key does not belong to the cache.</param>
+        /// <param name="token">A cancellation token that is monitored throughout
+        /// the lifetime of the method.</param>
+        /// <returns>The value of the string associated with the given key.</returns>
+        public static async ValueTask<string> GetOrSetAsync(
+            this IDistributedCache cache,
+            string key,
+            Func<string> setDelegate,
+            CancellationToken token = default
+            ) 
+        {
+            // Validate the parameters before attempting to use them.
+            Guard.Instance().ThrowIfNull(cache, nameof(cache))
+                .ThrowIfNullOrEmpty(key, nameof(key))
+                .ThrowIfNull(setDelegate, nameof(setDelegate));
+
+            // Call the overload.
+            var bytes = await cache.GetAsync(
+                key,
+                token
+                ).ConfigureAwait(false);
+
+            var value = "";
+
+            // Did we fail?
+            if (bytes is null || !bytes.Any())
+            {
+                // Create the value.
+                value = setDelegate.Invoke();
+
+                // Convert to bytes.
+                bytes = Encoding.UTF8.GetBytes(value);
+
+                // Set the bytes in the cache.
+                await SetAsync(
+                    cache,
+                    key,
+                    bytes
+                    ).ConfigureAwait(false);
+            }
+            else
+            {
+                // Convert to a string.
+                value = Encoding.UTF8.GetString(bytes);
+            }            
+
+            // Return the results.
+            return value;
         }
 
         // *******************************************************************

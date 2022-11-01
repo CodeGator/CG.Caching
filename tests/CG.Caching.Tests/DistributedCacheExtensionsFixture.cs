@@ -1,4 +1,7 @@
 ﻿
+using Newtonsoft.Json.Linq;
+using System.Reflection.Metadata.Ecma335;
+
 namespace Microsoft.Extensions.Caching.Distributed
 {
     /// <summary>
@@ -13,6 +16,58 @@ namespace Microsoft.Extensions.Caching.Distributed
         // *******************************************************************
 
         #region Public methods
+
+        [TestMethod]
+        public async Task DistributedCache_GetOrSetAsync_BothHitAndMiss()
+        {
+            // Arrange ...
+            var cache = new Mock<IDistributedCache>();
+
+            cache.Setup(x => x.GetAsync(
+                It.IsAny<string>(),
+                It.IsAny<CancellationToken>()
+                ));
+
+            cache.Setup(x => x.SetAsync(
+                It.IsAny<string>(),
+                It.IsAny<byte[]>(),
+                It.IsAny<DistributedCacheEntryOptions>(),
+                It.IsAny<CancellationToken>()
+                )).Verifiable();
+
+            // Act ...
+
+            // Cache miss, call our generation delegate.
+            var result1 = await cache.Object.GetOrSetAsync(
+               "TESTKEY1",
+               () => "1, 2 ,3"
+               ).ConfigureAwait(false);
+
+            cache.Setup(x => x.GetAsync(
+                It.IsAny<string>(),
+                It.IsAny<CancellationToken>()
+                )).ReturnsAsync(new byte[] { 49, 44, 32, 50, 32, 44, 51 })
+                .Verifiable();
+
+            // Cache hit, don't call our generation delegate.
+            var result2 = await cache.Object.GetOrSetAsync(
+               "TESTKEY1",
+               () => 
+               {
+                   Assert.Fail("The cache failed to find the key!");
+                   return "1, 2 ,3";
+               }).ConfigureAwait(false);
+
+            // Assert ...
+            Assert.IsTrue(
+                result1 == result2,
+                "The values don't match!"
+                );
+
+            cache.Verify();
+        }
+
+        // *******************************************************************
 
         /// <summary>
         /// This method ensures the <see cref="DistributedCacheExtensions.GetOrSetAsync{T}(string, Func{T}, CancellationToken)"/>
